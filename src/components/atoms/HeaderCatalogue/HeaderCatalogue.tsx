@@ -14,11 +14,12 @@ export type HeaderProps = {
 const HeaderCatalogue: FC<HeaderProps> = (props) => {
   // console.log("HeaderProps", props);
 
+  //using redux
   const pageTitle = useSelector((state: RootState) => state.pageTitle);
-  console.log("pageTitle", pageTitle);
+  // console.log("pageTitle", pageTitle);
 
   const { selectedMovie } = useContext(MovieContext);
-  console.log("selectedMovie", selectedMovie);
+  // console.log("selectedMovie", selectedMovie);
 
   return (
     <div className="container">
@@ -28,8 +29,8 @@ const HeaderCatalogue: FC<HeaderProps> = (props) => {
         alt=""
       ></img>
       <p className="headerTitle">
-        {/* <strong>{selectedMovie ? selectedMovie : props.title}</strong> */}
         <strong>{pageTitle ? pageTitle : props.title}</strong>
+        {/* <strong>{selectedMovie ? selectedMovie : props.title}</strong> */}
       </p>
     </div>
   );

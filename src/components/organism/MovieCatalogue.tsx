@@ -31,7 +31,7 @@ const MovieCatalogue: FC<MovieCatalogueProps> = (props) => {
             />
           ) : null}
         </div>
-        <div className="column">
+        <div className="column" style={{ backgroundColor: "#eaeaea" }}>
           <MovieList
             listItems={props.movieListData}
             onSelectedItem={setSelectedMovieId}

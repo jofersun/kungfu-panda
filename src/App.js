@@ -1,16 +1,10 @@
-// import logo from "./logo.svg";
-import "./App.css";
-import HeaderCatalogue from "./components/atoms/HeaderCatalogue.tsx";
-import MovieCatalogue from "./components/organism/MovieCatalogue.tsx";
-import DataMovieList from "./data/DataMovie.json";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  console.log("DataMovieList", DataMovieList);
   return (
     <div className="App">
-      <HeaderCatalogue title="Movie Catalogue" />
-      <MovieCatalogue movieListData={DataMovieList} />
-      {/* <header className="App-header">
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -23,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
+      </header>
     </div>
   );
 }

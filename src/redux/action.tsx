@@ -1,11 +1,14 @@
-const setPageTitle = (title: string) => ({
-  type: "SET_PAGE_TITLE",
-  payload: title,
-});
+export type PageTitleType = {
+  type: string;
+  payload: string;
+};
 
-// const setPageTitle = (payload) => ({
-//   type: "SET_PAGE_TITLE",
-//   payload: payload,
-// });
+function setPageTitle(title: string): PageTitleType {
+  console.log("setPageTitle", title);
+  return {
+    type: "SET_PAGE_TITLE",
+    payload: title,
+  };
+}
 
 export default setPageTitle;

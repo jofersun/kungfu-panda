@@ -1,5 +1,5 @@
-import React from "react";
-import { FC, useContext } from "react";
+import React, { useContext } from "react";
+import { FC } from "react";
 import { ListItemProps } from "../atoms/ListItem.tsx";
 import ListItem from "../atoms/ListItem.tsx";
 import MovieContext from "../../MovieContext.tsx";
@@ -20,14 +20,21 @@ const MovieList: FC<MovieListProps> = (props) => {
 
   const onMovieSelected = (movieId: number) => {
     console.log("onMovieSelected", movieId);
+
     props?.onSelectedItem(movieId);
     const movie = props?.listItems.find((a) => a.id === movieId);
+
+    //using context
     if (setSelectedMovie) {
       // console.log("setSelectedMovie", setSelectedMovie);
       setSelectedMovie(movie?.title);
     } else console.log("setSelectedMovie is undifined");
-    console.log("setPageTitle", setPageTitle);
-    dispatch(setPageTitle(movie?.title));
+
+    //using redux
+    if (setPageTitle) {
+      // console.log("setPageTitle", setPageTitle);
+      dispatch(setPageTitle(movie?.title));
+    } else console.log("setPageTitle is undifined");
   };
 
   return (

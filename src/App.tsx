@@ -5,9 +5,10 @@ import HeaderCatalogue from "./components/atoms/HeaderCatalogue/HeaderCatalogue.
 import MovieCatalogue from "./components/organism/MovieCatalogue.tsx";
 
 import { Provider } from "react-redux";
-import store from "./redux/store.tsx";
 
 import DataMovieList from "./data/DataMovie.json";
+import store from "./redux/store.tsx";
+
 import "./App.css";
 
 const App: FC<{}> = () => {
@@ -19,16 +20,16 @@ const App: FC<{}> = () => {
     <div>
       <Provider store={store}>
         <div className="App">
-          <HeaderCatalogue title="Movie Catalogue" />
+          <HeaderCatalogue title="Header Movie Catalogue" />
           <MovieCatalogue movieListData={DataMovieList} />
         </div>
       </Provider>
       {/* <MovieContext.Provider value={{ selectedMovie, setSelectedMovie }}>
-        <div className="App">
-          <HeaderCatalogue title="Movie Catalogue" />
-          <MovieCatalogue movieListData={DataMovieList} />
-        </div>
-      </MovieContext.Provider> */}
+      <div className="App">
+        <HeaderCatalogue title="Movie Catalogue" />
+        <MovieCatalogue movieListData={DataMovieList} />
+      </div>
+    </MovieContext.Provider> */}
     </div>
   );
 };

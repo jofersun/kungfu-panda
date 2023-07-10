@@ -1,23 +1,17 @@
-// const reducer = (state, action) => {
-//   switch (action.type){
-//     case "SET_PAGE_TITLE":
-//       return state;
-//       default:
-//         return state;
-//   }
-// }
+import { PageTitleType } from "./action.tsx";
 
-const reducer = (state, action) => {
-  // console.log("state", state);
-  // console.log("action", action);
+const reducer = (state, action: PageTitleType) => {
+  console.log("current state", state);
+  console.log("current action", action);
 
-  const { type, payload } = action;
-  switch (type) {
+  // const { type, payload } = action;
+  switch (action.type) {
     case "SET_PAGE_TITLE":
-      return {
-        ...state,
-        pageTitle: payload,
+      const result = {
+        // ...state, // we should copy to create new instance of state, or else it will be referenced and will be unlimited nested state
+        pageTitle: action.payload,
       };
+      return result;
     default:
       return state;
   }
