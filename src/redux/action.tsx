@@ -3,4 +3,9 @@ const setPageTitle = (title: string) => ({
   payload: title,
 });
 
-export default { setPageTitle };
+// const setPageTitle = (payload) => ({
+//   type: "SET_PAGE_TITLE",
+//   payload: payload,
+// });
+
+export default setPageTitle;

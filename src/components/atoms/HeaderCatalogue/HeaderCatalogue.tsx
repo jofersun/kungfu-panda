@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import { FC } from "react";
 import MovieContext from "../../../MovieContext.tsx";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store.tsx";
+
 import "./HeaderCatalogue.css";
 
 export type HeaderProps = {
@@ -8,9 +12,14 @@ export type HeaderProps = {
 };
 
 const HeaderCatalogue: FC<HeaderProps> = (props) => {
-  const { selectedMovie } = useContext(MovieContext);
-  // console.log("selectedMovie", selectedMovie);
   // console.log("HeaderProps", props);
+
+  const pageTitle = useSelector((state: RootState) => state.pageTitle);
+  console.log("pageTitle", pageTitle);
+
+  const { selectedMovie } = useContext(MovieContext);
+  console.log("selectedMovie", selectedMovie);
+
   return (
     <div className="container">
       <img
@@ -19,7 +28,8 @@ const HeaderCatalogue: FC<HeaderProps> = (props) => {
         alt=""
       ></img>
       <p className="headerTitle">
-        <strong>{selectedMovie ? selectedMovie : props.title}</strong>
+        {/* <strong>{selectedMovie ? selectedMovie : props.title}</strong> */}
+        <strong>{pageTitle ? pageTitle : props.title}</strong>
       </p>
     </div>
   );

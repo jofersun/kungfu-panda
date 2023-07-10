@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { FC } from "react";
+import React from "react";
+import { FC, useContext } from "react";
 import { ListItemProps } from "../atoms/ListItem.tsx";
 import ListItem from "../atoms/ListItem.tsx";
 import MovieContext from "../../MovieContext.tsx";
@@ -23,6 +23,7 @@ const MovieList: FC<MovieListProps> = (props) => {
     props?.onSelectedItem(movieId);
     const movie = props?.listItems.find((a) => a.id === movieId);
     if (setSelectedMovie) {
+      // console.log("setSelectedMovie", setSelectedMovie);
       setSelectedMovie(movie?.title);
     } else console.log("setSelectedMovie is undifined");
     console.log("setPageTitle", setPageTitle);

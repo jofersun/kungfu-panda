@@ -16,17 +16,20 @@ const App: FC<{}> = () => {
   //   console.log("setSelectedMovie", setSelectedMovie);
 
   return (
-    <Provider store={store}>
-      <div className="App">
-        <HeaderCatalogue title="Movie Catalogue" />
-        <MovieCatalogue movieListData={DataMovieList} />
-      </div>
-    </Provider> // <MovieContext.Provider value={{ selectedMovie, setSelectedMovie }}>
-    //   <div className="App">
-    //     <HeaderCatalogue title="Movie Catalogue" />
-    //     <MovieCatalogue movieListData={DataMovieList} />
-    //   </div>
-    // </MovieContext.Provider>
+    <div>
+      <Provider store={store}>
+        <div className="App">
+          <HeaderCatalogue title="Movie Catalogue" />
+          <MovieCatalogue movieListData={DataMovieList} />
+        </div>
+      </Provider>
+      {/* <MovieContext.Provider value={{ selectedMovie, setSelectedMovie }}>
+        <div className="App">
+          <HeaderCatalogue title="Movie Catalogue" />
+          <MovieCatalogue movieListData={DataMovieList} />
+        </div>
+      </MovieContext.Provider> */}
+    </div>
   );
 };
 
