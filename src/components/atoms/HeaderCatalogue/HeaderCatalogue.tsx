@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { FC } from "react";
-import MovieContext from "../../../MovieContext.tsx";
+import MovieContext from "../../../MovieContext";
 
 import { useSelector } from "react-redux";
-import { RootState } from "../../../redux/store.tsx";
+import { RootState } from "../../../redux/store";
 
 import "./HeaderCatalogue.css";
 
@@ -18,7 +18,7 @@ const HeaderCatalogue: FC<HeaderProps> = (props) => {
   const pageTitle = useSelector((state: RootState) => state.pageTitle);
   // console.log("pageTitle", pageTitle);
 
-  const { selectedMovie } = useContext(MovieContext);
+  //const { selectedMovie } = useContext(MovieContext);
   // console.log("selectedMovie", selectedMovie);
 
   return (

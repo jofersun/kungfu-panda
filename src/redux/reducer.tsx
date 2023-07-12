@@ -1,6 +1,6 @@
-import { PageTitleType } from "./action.tsx";
+import { PageTitleType } from "./action";
 
-const reducer = (state, action: PageTitleType) => {
+const reducer = (state: any, action: PageTitleType) => {
   console.log("current state", state);
   console.log("current action", action);
 

@@ -1,33 +1,42 @@
 import React, { useContext } from "react";
 import { FC } from "react";
-import { ListItemProps } from "../atoms/ListItem.tsx";
-import ListItem from "../atoms/ListItem.tsx";
-import MovieContext from "../../MovieContext.tsx";
+import { ListItemProps } from "../atoms/ListItem";
+import ListItem from "../atoms/ListItem";
+import MovieContext from "../../MovieContext";
 
 import { useDispatch } from "react-redux";
-import setPageTitle from "../../redux/action.tsx";
+import setPageTitle from "../../redux/action";
 
+type MovieData = {
+  title: string;
+  year: string;
+  id: string;
+  poster: string;
+  director: string;
+  casts: string;
+  genre: string;
+};
 export type MovieListProps = {
-  listItems: ListItemProps[];
-  selectedId: number;
+  listItems: MovieData[];
+  selectedId: string;
   onSelectedItem?: Function;
 };
 
-const MovieList: FC<MovieListProps> = (props) => {
+const MovieList: FC<MovieListProps> = ({listItems, selectedId, onSelectedItem}) => {
   // console.log("MovieListProps", props);
   const { setSelectedMovie } = useContext(MovieContext);
   const dispatch = useDispatch();
 
-  const onMovieSelected = (movieId: number) => {
+  const onMovieSelected = (movieId: string) => {
     console.log("onMovieSelected", movieId);
 
-    props?.onSelectedItem(movieId);
-    const movie = props?.listItems.find((a) => a.id === movieId);
+    onSelectedItem && onSelectedItem(movieId);
+    const movie = listItems.find((a) => a.id === movieId) || listItems[0];
 
     //using context
     if (setSelectedMovie) {
       // console.log("setSelectedMovie", setSelectedMovie);
-      setSelectedMovie(movie?.title);
+      setSelectedMovie(movie.title);
     } else console.log("setSelectedMovie is undifined");
 
     //using redux
@@ -39,8 +48,8 @@ const MovieList: FC<MovieListProps> = (props) => {
 
   return (
     <div style={{ textAlign: "left" }}>
-      {props?.listItems &&
-        props.listItems.map((a) => {
+      {listItems &&
+        listItems.map((a: MovieData) => {
           // console.log("a", a);
           return (
             <p key={a.id}>
@@ -49,7 +58,7 @@ const MovieList: FC<MovieListProps> = (props) => {
                 id={a.id}
                 title={a.title}
                 onSelectedItem={onMovieSelected}
-                isSelected={props.selectedId === a.id}
+                isSelected={selectedId === a.id}
               />
             </p>
           );

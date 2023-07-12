@@ -3,7 +3,7 @@ import { FC } from "react";
 
 export type MovieDetailProps = {
   title: string;
-  year: number;
+  year: string;
   director: string;
   cast: string;
   genre: string;

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { FC } from "react";
-import MovieContext from "./MovieContext.tsx";
-import HeaderCatalogue from "./components/atoms/HeaderCatalogue/HeaderCatalogue.tsx";
-import MovieCatalogue from "./components/organism/MovieCatalogue.tsx";
+import MovieContext from "./MovieContext";
+import HeaderCatalogue from "./components/atoms/HeaderCatalogue/HeaderCatalogue";
+import MovieCatalogue from "./components/organism/MovieCatalogue";
 
 import { Provider } from "react-redux";
 
 import DataMovieList from "./data/DataMovie.json";
-import store from "./redux/store.tsx";
+import store from "./redux/store";
 
 import "./App.css";
 

@@ -1,81 +1,81 @@
 [
     {
-      "id": 1,
+      "id": "title1",
       "title": "Kung Fu Panda",
-      "year": 2008,
+      "year": "2008",
       "director": "Mark Osborne",
       "casts": "Jack Black, Jackie Chan",
       "genre": "Action, Comedy",
-      "imgPath": "https://upload.wikimedia.org/wikipedia/en/7/76/Kungfupanda.jpg"
+      "poster": "https://upload.wikimedia.org/wikipedia/en/7/76/Kungfupanda.jpg"
     },
     {
-      "id": 2,
+      "id": "title2",
       "title": "Kung Fu Panda 2",
-      "year": 2011,
+      "year": "2011",
       "director": "Mark Osborne",
       "casts": "Jack Black, Angelina Jolie, Dustin Hoffman",
       "genre": "Action, Comedy",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/b/b1/Kung_Fu_Panda_2_Poster.jpg"
     },
     {
-      "id": 3,
+      "id": "title3",
       "title": "Kung Fu Panda 3",
-      "year": 2016,
+      "year": "2016",
       "director": "Mark Osborne",
       "casts": "Jack Black, Bryan Cranston, Dustin Hoffman, Angelina Jolie",
       "genre": "Action, Comedy",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/e/e6/Kung_Fu_Panda_3_poster.jpg"
     },
     {
-      "id": 4,
+      "id": "title4",
       "title": "Harry Potter and the Deathly Hallows",
-      "year": 2010,
+      "year": "2010",
       "director": "Alfonso Cuarón",
       "casts": "Daniel Radcliffe, Emma Watson",
       "genre": "Adventure, Drama",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/2/2d/Harry_Potter_and_the_Deathly_Hallows_–_Part_1.jpg"
     },
     {
-      "id": 5,
+      "id": "title5",
       "title": "Harry Potter and the Scorcere's Stone",
-      "year": 2001,
+      "year": "2001",
       "director": "Alfonso Cuarón",
       "casts": "Daniel Radcliffe, Emma Watson",
       "genre": "Adventure, Drama",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg"
     },
     {
-      "id": 6,
+      "id": "title6",
       "title": "Harry Potter and the Chamber of Secrets",
-      "year": 2002,
+      "year": "2002",
       "director": "Alfonso Cuarón",
       "casts": "Daniel Radcliffe, Emma Watson",
       "genre": "Adventure, Drama",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/c/c0/Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg"
     },
     {
-      "id": 7,
+      "id": "title7",
       "title": "Harry Potter and the Prisoner of Azkaban",
-      "year": 2004,
+      "year": "2004",
       "director": "Alfonso Cuarón",
       "casts": "Daniel Radcliffe, Emma Watson",
       "genre": "Adventure, Drama",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/b/bc/Prisoner_of_azkaban_UK_poster.jpg"
     },
     {
-      "id": 8,
+      "id": "title8",
       "title": "Harry Potter and the Goblet of Fire",
-      "year": 2005,
+      "year": "2005",
       "director": "Alfonso Cuarón",
       "casts": "Daniel Radcliffe, Emma Watson",
       "genre": "Adventure, Drama",
-      "imgPath":
+      "poster":
         "https://upload.wikimedia.org/wikipedia/en/c/c9/Harry_Potter_and_the_Goblet_of_Fire_Poster.jpg"
     }
   ]

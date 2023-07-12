@@ -2,14 +2,14 @@ import { createContext } from "react";
 
 export type MovieContextType = {
   selectedMovie: string;
-  setSelectedMovie: () => void;
+  setSelectedMovie: (id: string) => void;
 };
 
 const initialContext = {
   selectedMovie: "",
-  setSelectedMovie: () => ({}),
+  setSelectedMovie: (id: string) => ({}),
 };
-const MovieContext: MovieContextType =
+const MovieContext =
   createContext<MovieContextType>(initialContext);
 
 export default MovieContext;

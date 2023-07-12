@@ -2,7 +2,7 @@ import React from "react";
 import { FC } from "react";
 
 export type ListItemProps = {
-  id: number;
+  id: string;
   title: string;
   isSelected?: boolean;
   onSelectedItem?: Function;

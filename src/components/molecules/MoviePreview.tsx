@@ -1,12 +1,12 @@
 import React from "react";
 import { FC } from "react";
-import Poster from "../atoms/Poster.tsx";
-import MovieDetail from "../atoms/MovieDetail.tsx";
+import Poster from "../atoms/Poster";
+import MovieDetail from "../atoms/MovieDetail";
 
 export type MoviePreviewPorps = {
   title: string;
   url: string;
-  year: number;
+  year: string;
   director: string;
   cast: string;
   genre: string;

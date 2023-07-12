@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import reducer from "./reducer.tsx";
+import reducer from "./reducer";
 
 export type RootState = {
   pageTitle: string;

@@ -1,17 +1,27 @@
 import React from "react";
 import { FC, useState } from "react";
-import MoviePreview from "../molecules/MoviePreview/MoviePreview.tsx";
-import MovieList from "../molecules/MovieList.tsx";
+import MoviePreview from "../molecules/MoviePreview/MoviePreview";
+import MovieList from "../molecules/MovieList";
 import "./MovieCatalogue.css";
 
-export type MovieCatalogueProps = {
-  movieListData: [];
+type MovieData = {
+  title: string;
+  year: string;
+  id: string;
+  poster: string;
+  director: string;
+  casts: string;
+  genre: string;
 };
 
-const MovieCatalogue: FC<MovieCatalogueProps> = (props) => {
+export type MovieCatalogueProps = {
+  movieListData: MovieData[];
+};
+
+const MovieCatalogue: FC<MovieCatalogueProps> = ({movieListData}) => {
   // console.log("MovieCatalogueProps", props);
-  const [selectedMovieId, setSelectedMovieId] = useState(0);
-  const selectedMovie = props.movieListData?.find(
+  const [selectedMovieId, setSelectedMovieId] = useState<string>(movieListData[0].id);
+  const selectedMovie = movieListData?.find(
     (a) => a.id === selectedMovieId
   );
   // console.log("selectedMovieId: " + selectedMovieId, selectedMovie);
@@ -22,7 +32,7 @@ const MovieCatalogue: FC<MovieCatalogueProps> = (props) => {
         <div className="column">
           {selectedMovie ? (
             <MoviePreview
-              url={selectedMovie?.imgPath}
+              url={selectedMovie?.poster}
               title={selectedMovie?.title}
               year={selectedMovie?.year}
               director={selectedMovie?.director}
@@ -33,7 +43,7 @@ const MovieCatalogue: FC<MovieCatalogueProps> = (props) => {
         </div>
         <div className="column" style={{ backgroundColor: "#eaeaea" }}>
           <MovieList
-            listItems={props.movieListData}
+            listItems={movieListData}
             onSelectedItem={setSelectedMovieId}
             selectedId={selectedMovieId}
           />
