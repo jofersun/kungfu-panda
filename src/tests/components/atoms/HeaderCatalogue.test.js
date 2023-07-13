@@ -1,19 +1,24 @@
-import { shallow } from "enzyme";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+// import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom";
 
-import "../../setup";
+import { Provider } from "react-redux";
+import store from "../../../redux/store";
+import HeaderCatalogue from "../../../components/atoms/HeaderCatalogue/HeaderCatalogue";
 
-import HeaderCatalogue from "../../../components/atoms/HeaderCatalogue/HeaderCatalogue.tsx";
-
-describe("ini deskripsi test", () => {
-  test("test pertama", () => {
-    let a = 1;
-    expect(a).toBe(1);
-
+describe("Header Catalogue test!", () => {
+  test("Load header correctly", () => {
     const title = "this is a title header catalogue";
     const key = 100;
-    // const atom = shallow(<HeaderCatalogue title={title} key={key} />);
-    // console.log("atom", atom);
-    // expect(atom.HeaderCatalogue.title).toBe(title);
-    // expect(atom.HeaderCatalogue.key).toBe(key);
+
+    render(
+      <Provider store={store}>
+        <HeaderCatalogue title={title} key={key} />
+      </Provider>
+    );
+    expect(
+      screen.getAllByText(/this is a title header catalogue/i)
+    ).toHaveLength(1);
   });
 });

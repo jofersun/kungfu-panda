@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FC } from "react";
-import MovieContext from "../../../MovieContext";
+// import MovieContext from "../../../MovieContext";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
@@ -24,12 +24,15 @@ const HeaderCatalogue: FC<HeaderProps> = (props) => {
   return (
     <div className="container">
       <img
+        id={"headerIcon"}
         src="./camera.png"
         style={{ width: 25, marginRight: 5 }}
         alt=""
       ></img>
       <p className="headerTitle">
-        <strong>{pageTitle ? pageTitle : props.title}</strong>
+        <strong id={"headerTitle"}>
+          {pageTitle ? pageTitle : props.title}
+        </strong>
         {/* <strong>{selectedMovie ? selectedMovie : props.title}</strong> */}
       </p>
     </div>

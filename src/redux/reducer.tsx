@@ -1,8 +1,8 @@
 import { PageTitleType } from "./action";
 
 const reducer = (state: any, action: PageTitleType) => {
-  console.log("current state", state);
-  console.log("current action", action);
+  // console.log("current state", state);
+  // console.log("current action", action);
 
   // const { type, payload } = action;
   switch (action.type) {

@@ -6,7 +6,7 @@ export type RootState = {
 };
 
 const intialState: RootState = {
-  pageTitle: "🎥 Movie Catalogue",
+  pageTitle: "", //"🎥 Movie Catalogue"
 };
 
 const store = createStore(reducer, intialState);
