@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+// import React, {useState} from "react";
 import { FC } from "react";
-import MovieContext from "./MovieContext";
+// import MovieContext from "./MovieContext";
 import HeaderCatalogue from "./components/atoms/HeaderCatalogue/HeaderCatalogue";
 import MovieCatalogue from "./components/organism/MovieCatalogue";
 
@@ -12,7 +12,7 @@ import store from "./redux/store";
 import "./App.css";
 
 const App: FC<{}> = () => {
-  const [selectedMovie, setSelectedMovie] = useState("");
+  // const [selectedMovie, setSelectedMovie] = useState("");
   //   console.log("selectedMovie", selectedMovie);
   //   console.log("setSelectedMovie", setSelectedMovie);
 
