@@ -20,7 +20,7 @@ export type MovieCatalogueProps = {
 
 const MovieCatalogue: FC<MovieCatalogueProps> = ({movieListData}) => {
   // console.log("MovieCatalogueProps", props);
-  const [selectedMovieId, setSelectedMovieId] = useState<string>(movieListData[0].id);
+  const [selectedMovieId, setSelectedMovieId] = useState<string>("");
   const selectedMovie = movieListData?.find(
     (a) => a.id === selectedMovieId
   );
