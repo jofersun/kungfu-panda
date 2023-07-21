@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FC } from "react";
-// import MovieContext from "../../../MovieContext";
+import MovieContext from "../../../MovieContext";
 
 // import { useSelector } from "react-redux";
 // import { RootState } from "../../../redux/store";
@@ -16,10 +16,10 @@ const HeaderCatalogue: FC<HeaderProps> = (props) => {
 
   //using redux
   // const pageTitle = useSelector((state: RootState) => state.pageTitle);
-  const pageTitle = props.title;
+  // const pageTitle = props.title;
   // console.log("pageTitle", pageTitle);
 
-  // const { selectedMovie } = useContext(MovieContext);
+  const { selectedMovie } = useContext(MovieContext);
   // console.log("selectedMovie", selectedMovie);
 
   return (
@@ -32,8 +32,8 @@ const HeaderCatalogue: FC<HeaderProps> = (props) => {
       ></img>
       <p className="headerTitle">
         <strong id={"headerTitle"}>
-          {pageTitle ? pageTitle : props.title}
-          {/* {selectedMovie ? selectedMovie : props.title} */}
+          {/* {pageTitle ? pageTitle : props?.title} */}
+          {selectedMovie ? selectedMovie : props?.title}
         </strong>
       </p>
     </div>

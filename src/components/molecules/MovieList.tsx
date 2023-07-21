@@ -34,13 +34,14 @@ const MovieList: FC<MovieListProps> = ({
   const onMovieSelected = (movieId: string) => {
     console.log("onMovieSelected", movieId);
 
+    // console.log("onSelectedItem", onSelectedItem);
     onSelectedItem && onSelectedItem(movieId);
-    const movie = listItems.find((a) => a.id === movieId) || listItems[0];
+    const movie = listItems.find((a) => a.id === movieId);
 
     //using context
     if (setSelectedMovie) {
       // console.log("setSelectedMovie", setSelectedMovie);
-      setSelectedMovie(movie.title);
+      setSelectedMovie(movie?.title ?? "");
     } else console.log("setSelectedMovie is undifined");
 
     //using redux
@@ -63,6 +64,7 @@ const MovieList: FC<MovieListProps> = ({
               onSelectedItem={onMovieSelected}
               isSelected={selectedId === a.id}
             />
+            // </p>
           );
         })}
     </div>

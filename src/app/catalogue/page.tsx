@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FC } from "react";
-// import MovieContext from "../../MovieContext";
+import MovieContext from "../../MovieContext";
 import HeaderCatalogue from "../../components/atoms/HeaderCatalogue/HeaderCatalogue";
 import MovieCatalogue from "../../components/organism/MovieCatalogue";
 
@@ -13,13 +13,17 @@ import DataMovieList from "../../data/DataMovie.json";
 import "./catalogue.css";
 
 const Page: FC<{}> = () => {
-  // const [selectedMovie, setSelectedMovie] = useState("");
+  const [selectedMovie, setSelectedMovie] = useState("");
   // console.log("selectedMovie", selectedMovie);
 
   return (
     <div>
-      <HeaderCatalogue title="Movie Catalogue" />
-      <MovieCatalogue movieListData={DataMovieList} />
+      <MovieContext.Provider value={{ selectedMovie, setSelectedMovie }}>
+        <div className="App">
+          <HeaderCatalogue title="Movie Catalogue" />
+          <MovieCatalogue movieListData={DataMovieList} />
+        </div>
+      </MovieContext.Provider>
     </div>
   );
 };
