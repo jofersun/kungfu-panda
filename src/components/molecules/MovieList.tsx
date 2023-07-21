@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FC } from "react";
 import { ListItemProps } from "../atoms/ListItem";
 import ListItem from "../atoms/ListItem";
@@ -22,10 +22,14 @@ export type MovieListProps = {
   onSelectedItem?: Function;
 };
 
-const MovieList: FC<MovieListProps> = ({listItems, selectedId, onSelectedItem}) => {
+const MovieList: FC<MovieListProps> = ({
+  listItems,
+  selectedId,
+  onSelectedItem,
+}) => {
   // console.log("MovieListProps", props);
   const { setSelectedMovie } = useContext(MovieContext);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const onMovieSelected = (movieId: string) => {
     console.log("onMovieSelected", movieId);
@@ -35,15 +39,15 @@ const MovieList: FC<MovieListProps> = ({listItems, selectedId, onSelectedItem}) 
 
     //using context
     if (setSelectedMovie) {
-      // console.log("setSelectedMovie", setSelectedMovie);
+      console.log("setSelectedMovie", setSelectedMovie);
       setSelectedMovie(movie.title);
     } else console.log("setSelectedMovie is undifined");
 
     //using redux
-    if (setPageTitle) {
-      // console.log("setPageTitle", setPageTitle);
-      dispatch(setPageTitle(movie?.title));
-    } else console.log("setPageTitle is undifined");
+    // if (setPageTitle) {
+    //   // console.log("setPageTitle", setPageTitle);
+    //   dispatch(setPageTitle(movie?.title));
+    // } else console.log("setPageTitle is undifined");
   };
 
   return (

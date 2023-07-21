@@ -17,7 +17,9 @@ const ListItem: FC<ListItemProps> = (props) => {
         // console.log(
         //   "onClick",
         //   props,
-        //   "onSelectedItem is " + (props.onSelectedItem === undefined) + " null"
+        //   "onSelectedItem is " +
+        //     (props.onSelectedItem === undefined ? "" : "not ") +
+        //     "null"
         // );
         if (props.onSelectedItem) props.onSelectedItem(props.id);
       }}

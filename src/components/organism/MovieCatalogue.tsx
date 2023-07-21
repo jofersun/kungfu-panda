@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { FC, useState } from "react";
 import MoviePreview from "../molecules/MoviePreview/MoviePreview";
