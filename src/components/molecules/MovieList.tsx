@@ -39,7 +39,7 @@ const MovieList: FC<MovieListProps> = ({
 
     //using context
     if (setSelectedMovie) {
-      console.log("setSelectedMovie", setSelectedMovie);
+      // console.log("setSelectedMovie", setSelectedMovie);
       setSelectedMovie(movie.title);
     } else console.log("setSelectedMovie is undifined");
 
@@ -56,15 +56,13 @@ const MovieList: FC<MovieListProps> = ({
         listItems.map((a: MovieData) => {
           // console.log("a", a);
           return (
-            <p key={a.id}>
-              <ListItem
-                key={a.id}
-                id={a.id}
-                title={a.title}
-                onSelectedItem={onMovieSelected}
-                isSelected={selectedId === a.id}
-              />
-            </p>
+            <ListItem
+              key={a.id}
+              id={a.id}
+              title={a.title}
+              onSelectedItem={onMovieSelected}
+              isSelected={selectedId === a.id}
+            />
           );
         })}
     </div>
