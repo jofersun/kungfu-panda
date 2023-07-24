@@ -20,7 +20,7 @@ const App: FC<{}> = () => {
     <div>
       <Provider store={store}>
         <div className="App">
-          <HeaderCatalogue title="Header Movie Catalogue" />
+          <HeaderCatalogue title="Movie Catalogue" />
           <MovieCatalogue movieListData={DataMovieList} />
         </div>
       </Provider>

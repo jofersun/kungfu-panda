@@ -47,7 +47,7 @@ const MovieList: FC<MovieListProps> = ({
     //using redux
     // if (setPageTitle) {
     //   // console.log("setPageTitle", setPageTitle);
-    //   dispatch(setPageTitle(movie?.title));
+    //   dispatch(setPageTitle(movie?.title ?? ""));
     // } else console.log("setPageTitle is undifined");
   };
 
@@ -64,7 +64,6 @@ const MovieList: FC<MovieListProps> = ({
               onSelectedItem={onMovieSelected}
               isSelected={selectedId === a.id}
             />
-            // </p>
           );
         })}
     </div>
