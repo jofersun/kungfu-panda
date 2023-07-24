@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FC, useState } from "react";
 import MoviePreview from "../molecules/MoviePreview/MoviePreview";
@@ -18,12 +19,10 @@ export type MovieCatalogueProps = {
   movieListData: MovieData[];
 };
 
-const MovieCatalogue: FC<MovieCatalogueProps> = ({movieListData}) => {
+const MovieCatalogue: FC<MovieCatalogueProps> = ({ movieListData }) => {
   // console.log("MovieCatalogueProps", props);
   const [selectedMovieId, setSelectedMovieId] = useState<string>("");
-  const selectedMovie = movieListData?.find(
-    (a) => a.id === selectedMovieId
-  );
+  const selectedMovie = movieListData?.find((a) => a.id === selectedMovieId);
   // console.log("selectedMovieId: " + selectedMovieId, selectedMovie);
 
   return (

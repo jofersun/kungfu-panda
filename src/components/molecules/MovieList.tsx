@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FC } from "react";
 import { ListItemProps } from "../atoms/ListItem";
 import ListItem from "../atoms/ListItem";
@@ -22,14 +22,19 @@ export type MovieListProps = {
   onSelectedItem?: Function;
 };
 
-const MovieList: FC<MovieListProps> = ({listItems, selectedId, onSelectedItem}) => {
+const MovieList: FC<MovieListProps> = ({
+  listItems,
+  selectedId,
+  onSelectedItem,
+}) => {
   // console.log("MovieListProps", props);
   const { setSelectedMovie } = useContext(MovieContext);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const onMovieSelected = (movieId: string) => {
     console.log("onMovieSelected", movieId);
 
+    // console.log("onSelectedItem", onSelectedItem);
     onSelectedItem && onSelectedItem(movieId);
     const movie = listItems.find((a) => a.id === movieId);
 
@@ -40,10 +45,10 @@ const MovieList: FC<MovieListProps> = ({listItems, selectedId, onSelectedItem}) 
     } else console.log("setSelectedMovie is undifined");
 
     //using redux
-    if (setPageTitle) {
-      // console.log("setPageTitle", setPageTitle);
-      dispatch(setPageTitle(movie?.title ?? ""));
-    } else console.log("setPageTitle is undifined");
+    // if (setPageTitle) {
+    //   // console.log("setPageTitle", setPageTitle);
+    //   dispatch(setPageTitle(movie?.title ?? ""));
+    // } else console.log("setPageTitle is undifined");
   };
 
   return (
@@ -52,13 +57,13 @@ const MovieList: FC<MovieListProps> = ({listItems, selectedId, onSelectedItem}) 
         listItems.map((a: MovieData) => {
           // console.log("a", a);
           return (
-              <ListItem
-                key={a.id}
-                id={a.id}
-                title={a.title}
-                onSelectedItem={onMovieSelected}
-                isSelected={selectedId === a.id}
-              />
+            <ListItem
+              key={a.id}
+              id={a.id}
+              title={a.title}
+              onSelectedItem={onMovieSelected}
+              isSelected={selectedId === a.id}
+            />
           );
         })}
     </div>

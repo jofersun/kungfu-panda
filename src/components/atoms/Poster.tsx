@@ -8,7 +8,13 @@ export type PosterProps = {
 
 const Poster: FC<PosterProps> = (props) => {
   // console.log("PosterProps", props);
-  return <img src={props.url} alt={props.title} />;
+  return (
+    <img
+      src={props.url}
+      alt={props.title}
+      style={{ display: "inline-block" }}
+    />
+  );
 };
 
 export default Poster;
